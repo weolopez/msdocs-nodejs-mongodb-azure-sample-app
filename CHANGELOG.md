@@ -11,3 +11,10 @@
 
 *Breaking Changes*
 * ...
+
+*Work in Progress*
+* ...
+
+*Local Changes*
+* ...
+

@@ -5,13 +5,14 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const { format } = require("date-fns");
+const welcome = require("./lib/welcome");
 
 // 1st party dependencies
 var configData = require("./config/connection");
 var indexRouter = require("./routes/index");
 
 async function getApp() {
-
+  console.log(welcome.welcome)
   // Database
   var connectionInfo = await configData.getConnectionInfo();
   mongoose.connect(connectionInfo.DATABASE_URL);
@@ -20,8 +21,11 @@ async function getApp() {
 
   var port = normalizePort(process.env.PORT || '3000');
   app.set('port', port);
+  // create a route for static html files
+  app.use("/ai", express.static(__dirname + "/ai"));
 
   // view engine setup
+  // app.use("/ai", express.static(__dirname + "/ai"));
   app.set("views", path.join(__dirname, "views"));
   app.set("view engine", "pug");
 
