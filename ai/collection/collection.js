@@ -26,12 +26,13 @@ export class Collection {
     }
 
     //function to post data to the API
-    add(obj) {
-        post(this.collection, obj).then(data => {
+    async add(obj) {
+        return await post(this.collection, obj).then(data => {
             if (this.callback) {
                 localStorage.removeItem(this.collection)
                 this.get(data._id)
             }
+            return data
         })
     }
     //function to update data in the API

@@ -18,4 +18,8 @@ export class Component {
     save(data) {
         this.cms.save()
     }
+    setCallback(callback) {
+        this.callback = callback
+    }
+    
 }
