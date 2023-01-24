@@ -81,7 +81,7 @@
 }
 
 #body {
-  margin-top: 55px !important;
+  margin-top: 68px !important;
 }
 
 main {
@@ -137,8 +137,8 @@ footer {
   /* justify-content: flex-start; */
   align-items: center;
   /* align-content: stretch; */
-  justify-content: space-between;
-  background-color: black;
+  justify-content: space-between;    
+  background-color: #343541;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -153,4 +153,8 @@ footer {
   max-width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.navbar {
+  background-color: rgb(68 70 84) !important;
 }

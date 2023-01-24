@@ -32,9 +32,11 @@ export const modelJSON = {
     }
 }
 export async function weoai(prompt, from, max_tokens=4000) {
+    console.log('weoai', prompt, from, max_tokens)
     modelJSON.config.prompt = prompt;
     modelJSON.config.from = from;
     modelJSON.config.max_tokens = max_tokens;
+    console.log('modelJSON', modelJSON)
     return await fetch(`/weo`, req('POST', modelJSON)) 
         .then(response => {
             //check if status  of respnse  is 200

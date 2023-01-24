@@ -32,7 +32,7 @@
 
     <button onclick="remove()">Delete</button>
     <!-- button to clear localstorage -->
-    <button onclick="localStorage.clear()">Clear</button>
+    <button onclick="clear()">Clear</button>
 
     <br>
 
@@ -113,5 +113,12 @@
         window.weoai = () => {
             weoai(document.getElementById('data').value, 'weolopez').then(present)
         } 
+
+        window.clear = () => {
+            //save openai_key from localstorage
+            let key = localStorage.getItem('openai_key')
+            localStorage.clear()
+            localStorage.setItem('openai_key', key)
+        }
     </script>
 </html>
